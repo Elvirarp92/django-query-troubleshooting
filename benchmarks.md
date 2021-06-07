@@ -41,3 +41,25 @@ http://127.0.0.1:8000/api/v1/contact_subtypes/
 Total queries: 3 in 0.1295s 
 
 Observe how the n+1 problem comes with relationships.
+
+## Iteration 2 - Commit ecdaf332504248f0a8c8693384b2832df35acb33
+
+> Attempt 1: implementing EagerLoadingMixin naively
+
+http://127.0.0.1:8000/api/v1/legalfile_contactroles/
+
+| Type | Database  |   Reads  |  Writes  |  Totals  | Duplicates |
+|------|-----------|----------|----------|----------|------------|
+| RESP |  default  |    3     |    0     |    3     |     1      |
+|------|-----------|----------|----------|----------|------------|
+Total queries: 3 in 0.5721s 
+
+http://127.0.0.1:8000/api/v1/legalfiles/
+
+| Type | Database  |   Reads  |  Writes  |  Totals  | Duplicates |
+|------|-----------|----------|----------|----------|------------|
+| RESP |  default  |   2602   |    0     |   2602   |     1      |
+|------|-----------|----------|----------|----------|------------|
+Total queries: 2602 in 5.3187s 
+
+N+1 problem persists in deeper relationships
