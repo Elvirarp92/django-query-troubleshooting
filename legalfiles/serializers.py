@@ -25,7 +25,7 @@ class LegalFileContactRoleSerializer(serializers.ModelSerializer, EagerLoadingMi
 
 class LegalFileSerializer(serializers.ModelSerializer, EagerLoadingMixin):
     contactrole = LegalFileContactRoleSerializer(many=True)
-    PREFETCH_RELATED = ('contactrole',)
+    PREFETCH_RELATED = ('contactrole__contact', 'contactrole__subtype')
 
     class Meta:
         model = LegalFile

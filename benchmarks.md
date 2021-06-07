@@ -63,3 +63,23 @@ http://127.0.0.1:8000/api/v1/legalfiles/
 Total queries: 2602 in 5.3187s 
 
 N+1 problem persists in deeper relationships
+
+# Iteration 2 - Commit 2f13be585e4ff35fa039ceb93458f6b16b4edf6a
+
+> Specific implementation
+
+http://127.0.0.1:8000/api/v1/legalfile_contactroles/
+
+| Type | Database  |   Reads  |  Writes  |  Totals  | Duplicates |
+|------|-----------|----------|----------|----------|------------|
+| RESP |  default  |    3     |    0     |    3     |     1      |
+|------|-----------|----------|----------|----------|------------|
+Total queries: 3 in 0.6506s 
+
+http://127.0.0.1:8000/api/v1/legalfiles/
+
+| Type | Database  |   Reads  |  Writes  |  Totals  | Duplicates |
+|------|-----------|----------|----------|----------|------------|
+| RESP |  default  |    6     |    0     |    6     |     1      |
+|------|-----------|----------|----------|----------|------------|
+Total queries: 6 in 1.4884s 
