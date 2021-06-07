@@ -1,6 +1,6 @@
 # Benchmarks for 1300 files
 
-## Iteration 1 - Commit b94ff9f60c3fd9638b859c527b73cb720a619c3b
+## Iteration 1
 > Base state
 > 
 > Reproducing as closely as possible the OG state of the legalq app as a baseline for benchmarking
@@ -42,7 +42,7 @@ Total queries: 3 in 0.1295s
 
 Observe how the n+1 problem comes with relationships.
 
-## Iteration 2 - Commit ecdaf332504248f0a8c8693384b2832df35acb33
+## Iteration 2
 
 > Attempt 1: implementing EagerLoadingMixin naively
 
@@ -64,7 +64,7 @@ Total queries: 2602 in 5.3187s
 
 N+1 problem persists in deeper relationships
 
-# Iteration 2 - Commit 2f13be585e4ff35fa039ceb93458f6b16b4edf6a
+# Iteration 3
 
 > Specific implementation
 
